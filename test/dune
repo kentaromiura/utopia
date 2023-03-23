@@ -1,0 +1,21 @@
+(executable
+   (package test)
+   (name test)
+   (public_name test.exe)
+   (libraries
+     test.test-cases.lib
+     rely.lib
+   )
+   (modules Test)
+ )
+; (executable
+;   (package tests)
+;   (name TestCi)
+;   (public_name TestCi.exe)
+;   (libraries
+;     ReasonNativeTests
+;   )
+;   (modules TestCi)
+; )
+(include_subdirs unqualified)
+(dirs :standard __tests__)

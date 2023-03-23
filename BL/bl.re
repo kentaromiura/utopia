@@ -1,0 +1,2 @@
+let example = () => "This works.";
+

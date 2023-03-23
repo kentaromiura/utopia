@@ -1,0 +1,11 @@
+;; dune
+(library
+   (name BL)
+   (public_name BL.lib)
+;   (ocamlopt_flags -linkall -g)
+   (flags :standard -w -23 -w -27 -w -32 -w -33 -w -39)
+;   (libraries )
+   (modules bl)
+)
+
+(include_subdirs unqualified)

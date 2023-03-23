@@ -1,0 +1,9 @@
+;; dune
+(executable
+  (name main)
+  (libraries dream BL.lib))
+
+(rule
+ (targets main.re)
+ (deps main.eml.re)
+ (action (run dream_eml %{deps} --workspace %{workspace_root})))
