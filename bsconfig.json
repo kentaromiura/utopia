@@ -1,0 +1,20 @@
+{
+  "name": "utopia",
+  "sources": [{
+    "dir": "UI",
+    "subdirs": true
+  }, {
+    "dir": "BL",
+    "subdirs": true
+  }],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+
+  "reason": {"react-jsx": 3},
+  "refmt": 3,
+
+  "suffix": ".bs.js"
+}
+
