@@ -6,3 +6,4 @@ server/JS/min.js
 
 node_modules
 lib/bs
+BL/*.res

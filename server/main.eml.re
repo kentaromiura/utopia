@@ -8,11 +8,40 @@ let greet = (js, num) => {
   </html>
 };
 
+/* Given a path it reads all the file as a string */
+let _readAllFile = _path => {
+  
+  let result = ref("");
+  let finished = ref(false);
+
+  let file = switch (open_in("./server/JS/min.js")) {
+    | exception (Sys_error(msg)) => {
+      print_endline(msg ++ "\n" ++ "ensure to run make pui first")
+      exit(-1);
+    }
+    | file_in_channel => file_in_channel
+  };
+  
+  while(!finished^) {
+    switch(input_line(file)) {
+      | exception (End_of_file) => {
+        finished := true;
+        close_in(file);
+      }
+      | line => {
+        result := result^ ++ "\n" ++ line
+      }
+    }
+  }
+  
+  result^
+}
 
 let () = {
 
   let script = ref("");
   /* TODO: improve read of JS file */
+
   switch (open_in("./server/JS/min.js")) {
   | exception (Sys_error(msg)) => {
      print_endline(msg ++ "\n" ++ "ensure to run make pui first")
