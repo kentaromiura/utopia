@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "rescript": "github:rescript-lang/rescript#e3371bde322f16e72fc64a4d45714c2376e20255"
+  },
+  "scripts": {}
+}
